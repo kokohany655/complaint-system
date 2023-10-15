@@ -10,7 +10,7 @@ const Home = () => {
 
   const handleAddReport = (e) => {
     e.preventDefault();
-    router.push("/print-report");
+    router.replace("/print-report");
   };
 
   return (
