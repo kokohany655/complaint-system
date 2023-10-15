@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { ContextData } from "./_app";
-import Login from "@/components/login";
+import Login from "@/components/Login";
 
 const Home = () => {
   const router = useRouter();
