@@ -1,15 +1,14 @@
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-const login = () => {
-  const router = useRouter();
+const Login = ({ setIsLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
+    console.log("great");
     e.preventDefault();
     if (email === "admin@admin.com" && password === "1234") {
-      router.push("/");
+      setIsLogin(false);
     }
   };
 
@@ -20,7 +19,8 @@ const login = () => {
           href="#"
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900"
         >
-        Medical Login  
+         
+        Login
         </a>
         <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -37,7 +37,6 @@ const login = () => {
                 </label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
                   className="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 outline-none"
                   value={email}
@@ -55,7 +54,6 @@ const login = () => {
                 </label>
                 <input
                   type="password"
-                  name="password"
                   id="password"
                   value={password}
                   onChange={({ target }) => setPassword(target.value)}
@@ -67,6 +65,7 @@ const login = () => {
               <button
                 type="submit"
                 className="w-full text-white bg-[#702DF7] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                onSubmit={handleSubmit}
               >
                 Sign in
               </button>
@@ -78,4 +77,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
